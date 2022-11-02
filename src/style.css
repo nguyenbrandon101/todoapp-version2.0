@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+/* NavBar section*/
+body {
+    min-width: 600px;
+}
+.navBar {
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+  }
+.navBar img {
+    width: 120px;
+    height: 100px;
+    padding: 15px 20px;
+}
+.navBar h1 {
+    margin-right: auto;
+    font-family: 'Noto Serif Display', serif;
+}
+.navBar h2{
+    flex-direction: row;
+    font-family: 'Noto Serif Display', serif;
+}
+
+.date {
+    font-size: 18px;
+    margin-right: auto;
+}
+
+.date h3 {
+    margin-top: -20px;
+    font-size: 18px;
+    margin-left: 7px;
+    font-family: 'Noto Serif Display', serif;
+}
+
+/**/
+
+/* Progression and Weather Section*/
+/* Progression Circle*/
+.weatherProg {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: yellow;
+    height: 20rem;
+    border-radius: 30px;
+    align-items: center;
+}
+.progCirc {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    font-family: 'Merriweather', serif;
+    text-align: center;
+}
+circle {
+    transition: all 0.7s ease-in-out;
+}
+/* Weather Section*/
+.weather {
+    height: 20rem;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-image:url("weatherbackground.webp");
+    background-size: 950px 350px;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+}
+
+.weatherTitle {
+    color: white;
+    font-family: 'Merriweather', serif;
+}
+
+.weatherDisplay img {
+    margin-top: -1rem;
+    width: 90px;
+    height: 90px;
+}
+.weather input {
+    border-radius: 10px;
+}
+.weatherInput {
+    margin-top: -2rem;
+}
+
+.invalidCity {
+    color: red;
+    margin-top: 3rem;
+    font-family: 'Merriweather', serif;
+    font-size: 25px
+}
+
+.cityName {
+    font-family: 'Merriweather', serif;
+    font-size: 25px;
+    color: white;
+    margin-top: 0.5rem;
+}
+
+.temp {
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    margin-top: -0.5rem;
+    color: white;
+    text-shadow:  3px 6px rgba(50, 50, 70, 0.3);
+}
+.weatherType {
+    font-family: 'Merriweather', serif;
+    margin-top: -0.8rem;
+    color: white;
+}
+
+/* To-Do Section*/
+.todoSection h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 25px;
+}
+
+.todoSection h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+}
+
+.todoSection input {
+    width: 85.5%;
+    padding: 1rem 1rem;
+    margin-bottom: 1.5rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-right-style: hidden;
+}
+
+.plusBut {
+    padding: 1rem 1rem;
+    margin-bottom: 1.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-left-style: hidden;
+    font-weight: 900;
+    font-size: 0.8rem;
+    background-color: greenyellow;
+}
+
+ul li {
+    list-style: none;
+}
+
+
+
+
+
+.container {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+  }
+
+  .container input {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+  
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  /* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
