@@ -163,7 +163,7 @@ ul li {
     font-size: 22px;
   }
 
-  .container input {
+.container input {
     opacity: 0;
     cursor: pointer;
     height: 0;
@@ -180,7 +180,7 @@ ul li {
     background-color: #eee;
   }
   
-  .container:hover input ~ .checkmark {
+.container:hover input ~ .checkmark {
     background-color: #ccc;
   }
 
@@ -197,12 +197,12 @@ ul li {
   }
   
   /* Show the checkmark when checked */
-  .container input:checked ~ .checkmark:after {
+.container input:checked ~ .checkmark:after {
     display: block;
   }
   
   /* Style the checkmark/indicator */
-  .container .checkmark:after {
+.container .checkmark:after {
     left: 9px;
     top: 5px;
     width: 5px;

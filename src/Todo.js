@@ -2,19 +2,32 @@ import React from "react";
 
 export default function Todo() {
     const [inputTodo,setInputtodo] = React.useState("")
-    /*const [todos,setTodos] = React.useState([])*/
+    /**checkbox state */
+    const [checkers,setChecked] = React.useState(false)
     const [todos,setTodos] = React.useState(() => 
     JSON.parse(localStorage.getItem("todos")) || []
     )
     
     React.useEffect(() => {
         localStorage.setItem("todos", JSON.stringify(todos))
-    }, [todos])
-
+    }, [todos,checkers])
+    /** Handle the submit todo task */
     function handleSubmit(event) {
         event.preventDefault()
-        setTodos(prev => [...prev,{id:`${inputTodo}-${Date.now()}` ,inputTodo: `${[inputTodo]}`}])
+        setTodos(prev => [...prev,{id:`${inputTodo}-${Date.now()}` ,inputTodo: `${[inputTodo]}`, checkers: `${checkers}`}])
     }
+    /** START WORKING HERE */
+    /** handle the checkbox */
+    function handleCheck(td,event) {
+        let updateCheck = todos.map(task => {
+            if (task.id === td.id) {
+                return ({...task, checkers: !task.checkers})
+            }
+            return task
+        })
+        setTodos(updateCheck)
+    }
+
     return (
         <div>
             <div className="todoSection">
@@ -27,8 +40,8 @@ export default function Todo() {
                     <ul>
                         <li>
                             <label className ="container">
-                                <span> {td.inputTodo}</span>
-                                <input type="checkbox" checked="checked"></input>
+                                <span style={{textDecoration: td.checkers ?'none': 'line-through' }}> {td.inputTodo}</span>
+                                <i onClick={() => handleCheck(td)}>h</i>
                                 <span class="checkmark"></span>
                             </label>
                             <button>Edit</button>
