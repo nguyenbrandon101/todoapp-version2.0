@@ -73,6 +73,7 @@ export default function Todo() {
                         <li>
                             <label className ="container">
                                 <span style={{textDecoration: td.checkers ?'none': 'line-through' }}> {td.inputTodo}</span>
+                                <input type="checkbox" checked ={td.checkers ? '' : 'checked'}></input>
                                 <span onClick={() => handleCheck(td)} class="checkmark"></span>
                             </label>
                             <button onClick={(event) => handleEdit(td)}>Edit</button>
