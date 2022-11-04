@@ -1,7 +1,6 @@
 import React from "react";
 import Pie from "./Pie";
-
-export default function WeatherProgress() {
+export default function WeatherProgress(props) {
 /* String converter for city (upper case) */
     function convertCase(str) {
     var lower = String(str).toLowerCase();
@@ -49,11 +48,12 @@ export default function WeatherProgress() {
                 return require('./cloudy.png')
             }
     }
+
     return (
         <div className="weatherProg">
             <div className="progCirc">
                 <h1>Task Progression</h1> 
-                <Pie percentage={20} colour={"red"} />
+                <Pie percentage={(props.done/props.total)*100} colour={"#EA40A4"} className="pieLetter" />
             </div>
             <div className="weather">
                 <h1 className="weatherTitle">Today's Weather</h1> 

@@ -6,7 +6,6 @@ export default function App() {
   return (
     <div>
         <Navbar></Navbar>
-        <WeatherProgress/>
         <Todo/>
     </div>
   )

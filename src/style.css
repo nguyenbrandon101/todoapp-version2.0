@@ -1,9 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@1,300;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
 
+
+:root {
+	--pink: #EA40A4;
+	--lightblue: #3b3c3e;
+    --lightergrey : #4b4d4f;
+    --darkblue: #262626;
+	--light: #EEE;
+    --grey: #888;
+
+	--business-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
+	--personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+}
 /* NavBar section*/
 body {
     min-width: 600px;
+    background-color: var(--lightblue);
 }
 .navBar {
     height: 150px;
@@ -20,15 +33,18 @@ body {
 .navBar h1 {
     margin-right: auto;
     font-family: 'Noto Serif Display', serif;
+    color: white;
 }
 .navBar h2{
     flex-direction: row;
     font-family: 'Noto Serif Display', serif;
+    color: white;
 }
 
 .date {
     font-size: 18px;
     margin-right: auto;
+    color: white;
 }
 
 .date h3 {
@@ -36,6 +52,7 @@ body {
     font-size: 18px;
     margin-left: 7px;
     font-family: 'Noto Serif Display', serif;
+    color: var(--pink)
 }
 
 /**/
@@ -46,7 +63,7 @@ body {
     margin-top: 2rem;
     display: grid;
     grid-template-columns: auto auto;
-    background-color: yellow;
+    background-color: var(--darkblue);
     height: 20rem;
     border-radius: 30px;
     align-items: center;
@@ -56,10 +73,15 @@ body {
     grid-column-end: 2;
     font-family: 'Merriweather', serif;
     text-align: center;
+    color: var(--pink);
+    border-color: var(--pink);
 }
+
+
 circle {
-    transition: all 0.7s ease-in-out;
+    transition: all 1s ease-in-out;
 }
+
 /* Weather Section*/
 .weather {
     height: 20rem;
@@ -70,6 +92,7 @@ circle {
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
+    border-color: var(--pink);
 }
 
 .weatherTitle {
@@ -120,38 +143,125 @@ circle {
 .todoSection h1 {
     font-family: 'Merriweather', serif;
     font-size: 25px;
+    color: white;
+    margin-left: 0.2rem;
 }
 
 .todoSection h2 {
     font-family: 'Merriweather', serif;
     font-size: 20px;
+    color: white;
+    margin-left: 0.2rem;
 }
 
-.todoSection input {
+.enterTodo{
     width: 85.5%;
+    height: 18px;
     padding: 1rem 1rem;
     margin-bottom: 1.5rem;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
     border-right-style: hidden;
+    background-color: var(--darkblue);
+    border-color: var(--pink);
 }
 
 .plusBut {
-    padding: 1rem 1rem;
+    padding: 1.109rem 1rem;
     margin-bottom: 1.5rem;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     border-left-style: hidden;
     font-weight: 900;
     font-size: 0.8rem;
-    background-color: greenyellow;
+    background-color: var(--pink);
+    color: white;
+    border-color: var(--pink);
+}
+
+.enterTodo::placeholder{
+    color: white;
+    font-family: 'Merriweather', serif;
+  }
+
+.enterTodo {
+    color: white;
+    font-family: 'Merriweather', serif;
 }
 
 ul li {
     list-style: none;
+    border-radius: 0.5rem;
+    background-color: var(--darkblue);
+    margin-left: -2.5rem;
+    display: flex;
+    border: 2px solid var(--pink);
+
 }
 
 
+.todoPage {
+    display: block;
+
+}
+
+.deleteBut {
+    font-family: 'Merriweather', serif;
+    margin-right: auto;
+    border-radius: 0.5rem;
+    border: 2px solid black;
+    color: white;
+    background-color: var(--lightblue);
+}
+
+ .deleteBut:hover {
+    color: var(--pink);
+}
+
+.editBut {
+    font-family: 'Merriweather', serif;
+    margin-right: auto;
+    border-radius: 0.5rem;
+    border: 2px solid black;
+    color: white;
+    background-color: var(--lightblue);
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+}
+
+.editBut:hover {
+    color: var(--pink);
+}
+
+.editSection {
+    display:block ;
+    flex-direction: row; 
+}
+
+.editInput {
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    width: 80%;
+    height: 2rem;
+    border: 2px solid var(--pink);
+    color: var(--darkblue);
+    margin-left: 1rem;
+}
+
+.editSection button {
+    border-radius: 0.5rem;
+    border: 2px solid black;
+    font-family: 'Merriweather', serif;
+    background-color: var(--lightblue);
+    color: white;
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+    margin-left: 1rem;
+}
+
+.editSection button:hover {
+    color: var(--pink);
+}
 
 
 
@@ -159,7 +269,8 @@ ul li {
 .container {
     display: block;
     position: relative;
-    padding-left: 35px;
+    padding-left: 55px;
+    padding-top: 3px;
     margin-bottom: 12px;
     cursor: pointer;
     font-size: 22px;
@@ -177,6 +288,9 @@ ul li {
     height: 0;
     width: 0;
   }
+.container span {
+    color: white;
+}
   
   /* Create a custom checkbox */
   .checkmark {
@@ -185,17 +299,21 @@ ul li {
     left: 0;
     height: 25px;
     width: 25px;
-    background-color: #eee;
+    background-color: var(--lightblue);
+    margin-left: 1rem;
+    margin-top: 0.3rem;
+    border: 2px solid var();
+
   }
   
   /* On mouse-over, add a grey background color */
   .container:hover input ~ .checkmark {
-    background-color: #ccc;
+    background-color: var(--pink);
   }
   
   /* When the checkbox is checked, add a blue background */
   .container input:checked ~ .checkmark {
-    background-color: #2196F3;
+    background-color: var(--lightblue);
   }
   
   /* Create the checkmark/indicator (hidden when not checked) */
@@ -222,3 +340,16 @@ ul li {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
+.resetBut {
+    font-family: 'Merriweather', serif;
+    margin-right: auto;
+    border-radius: 0.5rem;
+    border: 2px solid black;
+    color: white;
+    background-color: var(--lightblue);
+    margin-left: 0.2rem;
+}
+
+.resetBut:hover {
+    color: var(--pink);
+}
